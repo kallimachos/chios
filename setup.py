@@ -6,7 +6,7 @@
 from codecs import open
 from os import path
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 here = path.abspath(path.dirname(__file__))
 
@@ -36,9 +36,9 @@ setup(
     ],
 
     keywords='sphinx documentation extension bold italic remote code',
-    packages=['chios'],
-    install_requires=['requests'],
+    packages=find_packages(exclude=['tests']),
+    install_requires=['docutils', 'requests', 'sphinx'],
     package_data={
-        'chios': ['bolditalic.css'],
+        'bolditalic': ['bolditalic.css'],
     },
 )
