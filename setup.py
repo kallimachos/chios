@@ -16,7 +16,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='chios',
-    version='0.1.0',
+    version='0.1.1',
     description='A collection of Sphinx extensions.',
     long_description=long_description,
     url='https://github.com/kallimachos/chios',
