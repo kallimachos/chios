@@ -1,10 +1,10 @@
 #!/bin/python
 """
-    chios
-    ~~~~~
+A collection of Sphinx extensions.
 
-    This package is a namespace package that contains all extensions
-    distributed in the ``chios`` distribution.
+https://github.com/kallimachos/chios
+
+Copyright 2017 Brian Moss
 """
 
-__import__('pkg_resources').declare_namespace(__name__)
+# __import__('pkg_resources').declare_namespace(__name__)

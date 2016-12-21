@@ -42,8 +42,6 @@ bolditalic
 **bolditalic** is an extension for Sphinx that enables inline bold + italic
 text styling.
 
-Full documentation: https://kallimachos.github.io/bolditalic/
-
 Usage
 -----
 
@@ -65,8 +63,6 @@ remotecode
 
 **remotecode** is an extension for Sphinx that enables code blocks from
 remote sources.
-
-Full documentation: https://kallimachos.github.io/remotecode/
 
 Usage
 -----

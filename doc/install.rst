@@ -4,8 +4,8 @@
 Installation
 ============
 
-#. Install **bolditalic** using ``pip``:
+Install **chios** using ``pip``:
 
-   .. code::
+.. code::
 
-      $ pip install chios
+   $ pip install chios

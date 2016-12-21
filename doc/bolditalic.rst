@@ -9,8 +9,8 @@ text styling.
 Usage
 ~~~~~
 
-#. :ref:`install` **chios**, then add **bolditalic** to the list of extensions
-   in ``conf.py``:
+#. :ref:`Install chios <install>`, then add **bolditalic** to the list of
+   extensions in ``conf.py``:
 
    .. code::
 
@@ -42,5 +42,5 @@ Usage
 Code listing
 ~~~~~~~~~~~~
 
-.. automodule:: __init__
+.. automodule:: bolditalic
    :members:

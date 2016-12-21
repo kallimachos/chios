@@ -3,9 +3,7 @@
 """
 A Sphinx extension that enables code blocks from remote sources.
 
-https://github.com/kallimachos/bolditalic
-
-Copyright 2016 Brian Moss
+Copyright 2017 Brian Moss
 """
 
 import requests

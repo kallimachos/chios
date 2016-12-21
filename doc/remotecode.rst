@@ -9,8 +9,8 @@ remote sources.
 Usage
 ~~~~~
 
-#. :ref:`install` **chios**, then add **remotecode** to the list of extensions
-   in ``conf.py``:
+#. :ref:`Install chios <install>`, then add **remotecode** to the list of
+   extensions in ``conf.py``:
 
    .. code::
 
@@ -41,5 +41,5 @@ warning:
 Code listing
 ~~~~~~~~~~~~
 
-.. automodule:: __init__
+.. automodule:: remotecode
    :members:

@@ -1,5 +1,7 @@
 Bolditalic
 bolditalic
+Chios
+chios
 inline
 inliner
 rawtext
