@@ -11,7 +11,7 @@ sourcecode = '<span class="s">Wile E. Coyote</span>'
 
 def test_remotecode():
     """Test remotecode."""
-    app = MakeApp(srcdir='tests/remtest', copy_srcdir_to_tmpdir=True)
+    app = MakeApp(srcdir='tests/sample', copy_srcdir_to_tmpdir=True)
     app.builder.build_all()
     html = (app.outdir / htmlfile).read_text()
     assert highlight in html

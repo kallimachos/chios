@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Documentation for testing bolditalic."""
+"""Documentation for testing chios extensions."""
 
 # -- General configuration ------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['bolditalic']
+extensions = ['chios.bolditalic',
+              'chios.remotecode']
 
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['_templates']
@@ -26,8 +27,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'bitest'
-copyright = u'2016, Brian Moss'
+project = u'chiostest'
+copyright = u'2017, Brian Moss'
 author = u'Brian Moss'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -83,6 +84,6 @@ html_theme = 'alabaster'
 # html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'bitestdoc'
+htmlhelp_basename = 'chiostestdoc'
 
 # rst_prolog = ''

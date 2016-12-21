@@ -12,7 +12,7 @@ cssresult = ('<link rel="stylesheet" ' +
 
 def test_bolditalic():
     """Test bolditalic."""
-    app = MakeApp(srcdir='tests/bitest', copy_srcdir_to_tmpdir=True)
+    app = MakeApp(srcdir='tests/sample', copy_srcdir_to_tmpdir=True)
     app.builder.build_all()
     html = (app.outdir / htmlfile).read_text()
     assert result in html
@@ -20,7 +20,7 @@ def test_bolditalic():
 
 def test_css():
     """Test css."""
-    app = MakeApp(srcdir='tests/bitest', copy_srcdir_to_tmpdir=True)
+    app = MakeApp(srcdir='tests/sample', copy_srcdir_to_tmpdir=True)
     app.builder.build_all()
     html = (app.outdir / htmlfile).read_text()
     assert cssresult in html
