@@ -36,48 +36,26 @@ Install **chios** using ``pip``:
    $ pip install chios
 
 
-bolditalic
+Extensions
 ~~~~~~~~~~
 
-**bolditalic** is an extension for Sphinx that enables inline bold + italic
-text styling.
+bolditalic
+----------
 
-Usage
------
+Enables inline bold + italic text styling using a ``bolditalic`` role text:
 
-#. Add the **bolditalic** extension to the list of extensions in ``conf.py``:
+.. code::
 
-   .. code::
-
-      extensions = ['chios.bolditalic']
-
-#. Use the ``bolditalic`` role to style text:
-
-   .. code::
-
-      The end of this sentence :bolditalic:`displays in bold and italic`.
-
+   The end of this sentence :bolditalic:`displays in bold and italic`.
 
 remotecode
-~~~~~~~~~~
+----------
 
-**remotecode** is an extension for Sphinx that enables code blocks from
-remote sources.
+Enables code blocks from remote sources using a ``remote-code-block``
+directive:
 
-Usage
------
+.. code::
 
-#. Add **remotecode** to the list of extensions in ``conf.py``:
+   .. remote-code-block:: ini
 
-   .. code::
-
-      extensions = ['chios.remotecode']
-
-#. Use the ``remote-code-block`` directive to fetch remote source code and
-   display it in a ``code-block``.
-
-   .. code::
-
-      .. remote-code-block:: ini
-
-         https://example.com/rawsource.ini
+      https://example.com/rawsource.ini
