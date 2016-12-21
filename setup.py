@@ -37,8 +37,6 @@ setup(
 
     keywords='sphinx documentation extension bold italic remote code',
     packages=find_packages(exclude=['tests']),
+    include_package_data=True,
     install_requires=['docutils', 'requests', 'sphinx'],
-    package_data={
-        'bolditalic': ['bolditalic.css'],
-    },
 )
