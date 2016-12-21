@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>bolditalic &mdash; chios  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="chios  documentation" href="index.html"/>
+        <link rel="next" title="remotecode" href="remotecode.html"/>
+        <link rel="prev" title="Installation" href="install.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> chios
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">bolditalic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-bolditalic">Code listing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remotecode.html">remotecode</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">chios</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>bolditalic</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/bolditalic.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bolditalic">
+<h1>bolditalic<a class="headerlink" href="#bolditalic" title="Permalink to this headline">¶</a></h1>
+<p><strong>bolditalic</strong> is an extension for Sphinx that enables inline bold + italic
+text styling.</p>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><a class="reference internal" href="install.html#install"><span class="std std-ref">Install chios</span></a>, then add <strong>bolditalic</strong> to the list of
+extensions in <code class="docutils literal"><span class="pre">conf.py</span></code>:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.bolditalic&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use the <code class="docutils literal"><span class="pre">bolditalic</span></code> role to style text:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span>The end of this sentence :bolditalic:`displays in bold and italic`.
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>If you define <code class="docutils literal"><span class="pre">html_context</span></code> in your <code class="docutils literal"><span class="pre">conf.py</span></code>, you must add the
+<code class="docutils literal"><span class="pre">bolditalic.css</span></code> style sheet to it.</p>
+<p><strong>Example</strong></p>
+<div class="code last highlight-default"><div class="highlight"><pre><span></span><span class="n">html_context</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;css_files&#39;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">&#39;_static/bespoke.css&#39;</span><span class="p">,</span>  <span class="c1"># custom CSS styling</span>
+    <span class="s1">&#39;_static/bolditalic.css&#39;</span><span class="p">,</span>  <span class="c1"># bolditalic styling</span>
+    <span class="p">],</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="module-bolditalic">
+<span id="code-listing"></span><h2>Code listing<a class="headerlink" href="#module-bolditalic" title="Permalink to this headline">¶</a></h2>
+<p>A Sphinx extension that enables inline bold + italic.</p>
+<p>Copyright 2017 Brian Moss</p>
+<dl class="function">
+<dt id="bolditalic.bolditalic">
+<code class="descclassname">bolditalic.</code><code class="descname">bolditalic</code><span class="sig-paren">(</span><em>name</em>, <em>rawtext</em>, <em>text</em>, <em>lineno</em>, <em>inliner</em>, <em>options={}</em>, <em>content=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#bolditalic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.bolditalic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add bolditalic role.</p>
+<p>Returns 2 part tuple containing list of nodes to insert into the
+document and a list of system messages.  Both are allowed to be
+empty.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; The role name used in the document.</li>
+<li><strong>rawtext</strong> &#8211; The entire markup snippet, with role.</li>
+<li><strong>text</strong> &#8211; The text marked with the role.</li>
+<li><strong>lineno</strong> &#8211; The line number where rawtext appears in the input.</li>
+<li><strong>inliner</strong> &#8211; The inliner instance that called this function.</li>
+<li><strong>options</strong> &#8211; Directive options for customization.</li>
+<li><strong>content</strong> &#8211; The directive content for customization.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bolditalic.css">
+<code class="descclassname">bolditalic.</code><code class="descname">css</code><span class="sig-paren">(</span><em>app</em>, <em>env</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#css"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.css" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add bolditalic CSS.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>app</strong> &#8211; Sphinx application context.</li>
+<li><strong>env</strong> &#8211; Sphinx environment context.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="bolditalic.setup">
+<code class="descclassname">bolditalic.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup for Sphinx extension.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> &#8211; Sphinx application context.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="remotecode.html" class="btn btn-neutral float-right" title="remotecode" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral" title="Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Brian Moss.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
