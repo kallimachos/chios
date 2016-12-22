@@ -8,6 +8,8 @@ from os import path
 
 from setuptools import find_packages, setup
 
+from chios import __version__
+
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
@@ -16,7 +18,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='chios',
-    version='0.1.1',
+    version=__version__,
     description='A collection of Sphinx extensions.',
     long_description=long_description,
     url='https://github.com/kallimachos/chios',
@@ -37,6 +39,8 @@ setup(
 
     keywords='sphinx documentation extension bold italic remote code',
     packages=find_packages(exclude=['tests']),
-    include_package_data=True,
+    package_data={
+        'chios.bolditalic': ['bolditalic.css']
+    },
     install_requires=['docutils', 'requests', 'sphinx'],
 )

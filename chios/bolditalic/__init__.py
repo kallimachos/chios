@@ -10,6 +10,8 @@ import os
 from docutils import nodes
 from shutil import copy
 
+from chios import __version__
+
 
 def css(app, env):
     """
@@ -66,7 +68,7 @@ def setup(app):
         app.info(' done')
     except:
         app.warn('Failed to initialize bolditalic styling.')
-    return {'version': '0.1.2'}
+    return {'version': __version__}
 
 
 if __name__ == '__main__':

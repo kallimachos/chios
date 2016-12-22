@@ -9,6 +9,8 @@ Copyright 2017 Brian Moss
 import requests
 from sphinx.directives import code
 
+from chios import __version__
+
 
 class RemoteCodeBlock(code.CodeBlock):
     """Create remote-code-block directive."""
@@ -36,7 +38,7 @@ def setup(app):
     app.info('adding remote-code-block directive...', nonl=True)
     app.add_directive('remote-code-block', RemoteCodeBlock)
     app.info(' done')
-    return {'version': '0.1.0'}
+    return {'version': __version__}
 
 
 if __name__ == '__main__':

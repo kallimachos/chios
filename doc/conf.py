@@ -19,7 +19,13 @@ except ImportError as e:
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
+sys.path.insert(0, os.path.abspath('..'))
 sys.path.insert(0, os.path.abspath('../chios/'))
+
+try:
+    from chios import __version__
+except:
+    print('Cannot load version.')
 
 # -- General configuration ------------------------------------------------
 
@@ -63,7 +69,9 @@ author = 'Brian Moss'
 # built documents.
 #
 # The short X.Y version.
-version = '0.1.1'
+# version = '0.1.1'
+version = __version__
+
 # The full version, including alpha/beta/rc tags.
 # release = '0'
 
