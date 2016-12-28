@@ -20,7 +20,7 @@ class RemoteCodeBlock(code.CodeBlock):
         link = self.content[0]
         try:
             r = requests.get(link)
-            assert r.status_code == 200
+            r.raise_for_status()
             self.content = [r.text]
             return super(RemoteCodeBlock, self).run()
         except:

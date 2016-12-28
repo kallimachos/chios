@@ -27,13 +27,13 @@ referrentur, debet timeam vix ut.
 
    .. remote-code-block:: ini
 
-      https://raw.githubusercontent.com/kallimachos/remotecode/master/tests/example.ini
+      https://raw.githubusercontent.com/kallimachos/chios/master/tests/example.ini
 
 **Result:**
 
 .. remote-code-block:: ini
 
-   https://raw.githubusercontent.com/kallimachos/remotecode/master/tests/example.ini
+   https://raw.githubusercontent.com/kallimachos/chios/master/tests/example.ini
 
 **Directive used:**
 
@@ -50,8 +50,8 @@ referrentur, debet timeam vix ut.
    https://example.ini
 
 
-remoterst
-~~~~~~~~~
+remoteinclude
+~~~~~~~~~~~~~
 
 Lorem ipsum dolor sit amet, ea dico scribentur eos. No his detracto platonem
 referrentur, debet timeam vix ut.
@@ -60,26 +60,19 @@ referrentur, debet timeam vix ut.
 
 .. code::
 
-   .. remote-include::
-
-      https://raw.githubusercontent.com/kallimachos/remotecode/master/tests/example.rst
+   .. remote-include:: https://raw.githubusercontent.com/kallimachos/chios/master/tests/example.rst
 
 **Result:**
 
-.. remote-include::
+.. remote-include:: https://raw.githubusercontent.com/kallimachos/chios/master/tests/example.rst
 
-   https://raw.githubusercontent.com/kallimachos/remotecode/master/tests/example.rst
 
 **Directive used:**
 
 .. code::
 
-   .. remote-include::
-
-      https://example.ini
+   .. remote-include:: https://example.rst
 
 **Result:**
 
-.. remote-include::
-
-   https://example.ini
+.. .. remote-include:: https://example.rst
