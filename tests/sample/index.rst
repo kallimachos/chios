@@ -48,3 +48,38 @@ referrentur, debet timeam vix ut.
 .. remote-code-block:: ini
 
    https://example.ini
+
+
+remoterst
+~~~~~~~~~
+
+Lorem ipsum dolor sit amet, ea dico scribentur eos. No his detracto platonem
+referrentur, debet timeam vix ut.
+
+**Directive used:**
+
+.. code::
+
+   .. remote-include::
+
+      https://raw.githubusercontent.com/kallimachos/remotecode/master/tests/example.rst
+
+**Result:**
+
+.. remote-include::
+
+   https://raw.githubusercontent.com/kallimachos/remotecode/master/tests/example.rst
+
+**Directive used:**
+
+.. code::
+
+   .. remote-include::
+
+      https://example.ini
+
+**Result:**
+
+.. remote-include::
+
+   https://example.ini
