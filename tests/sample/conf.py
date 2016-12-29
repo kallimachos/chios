@@ -88,5 +88,3 @@ html_theme = 'alabaster'
 htmlhelp_basename = 'chiostestdoc'
 
 # rst_prolog = ''
-
-file_insertion_enabled = False

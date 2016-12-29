@@ -1,5 +1,5 @@
-Example remote-include
-----------------------
+Some example RST remotely included
+----------------------------------
 
 This is some source RST that has been included using the ``remote-include``
 directive.
