@@ -42,7 +42,7 @@ Extensions
 bolditalic
 ----------
 
-Enables inline bold + italic text styling using a ``bolditalic`` role text:
+Enables inline bold + italic text styling using a ``bolditalic`` role:
 
 .. code::
 
