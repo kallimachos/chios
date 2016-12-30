@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>remotecode &mdash; chios  documentation</title>
+  <title>remoteinclude &mdash; chios  documentation</title>
   
 
   
@@ -38,8 +38,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="chios  documentation" href="index.html"/>
-        <link rel="next" title="remoteinclude" href="remoteinclude.html"/>
-        <link rel="prev" title="bolditalic" href="bolditalic.html"/> 
+        <link rel="prev" title="remotecode" href="remotecode.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -94,13 +93,13 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bolditalic.html">bolditalic</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">remotecode</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="remotecode.html">remotecode</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">remoteinclude</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-remotecode">Code listing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-remoteinclude">Code listing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="remoteinclude.html">remoteinclude</a></li>
 </ul>
 
             
@@ -131,11 +130,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>remotecode</li>
+    <li>remoteinclude</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/remotecode.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/remoteinclude.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -145,24 +144,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="remotecode">
-<h1>remotecode<a class="headerlink" href="#remotecode" title="Permalink to this headline">#</a></h1>
-<p><strong>remotecode</strong> is an extension for Sphinx that enables code blocks from
-remote sources.</p>
+  <div class="section" id="remoteinclude">
+<h1>remoteinclude<a class="headerlink" href="#remoteinclude" title="Permalink to this headline">#</a></h1>
+<p><strong>remoteinclude</strong> is an extension for Sphinx that enables RST file inclusion
+from remote sources.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Including text from a remote source is a security risk, as the text is
+parsed after inclusion. Include files from trusted sources only.</p>
+</div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
-<li><p class="first"><a class="reference internal" href="install.html#install"><span class="std std-ref">Install chios</span></a>, then add <strong>remotecode</strong> to the list of
+<li><p class="first"><a class="reference internal" href="install.html#install"><span class="std std-ref">Install chios</span></a>, then add <strong>remoteinclude</strong> to the list of
 extensions in <code class="docutils literal"><span class="pre">conf.py</span></code>:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.remotecode&#39;</span><span class="p">]</span>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.remoteinclude&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Use the <code class="docutils literal"><span class="pre">remote-code-block</span></code> directive to fetch remote source code and
-display it in a <code class="docutils literal"><span class="pre">code-block</span></code>.</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">ini</span>
-
-   <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rawsource</span><span class="o">.</span><span class="n">ini</span>
+<li><p class="first">Use the <code class="docutils literal"><span class="pre">remote-include</span></code> directive to fetch a remote RST file and
+include it:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">include</span><span class="p">::</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rawsource</span><span class="o">.</span><span class="n">rst</span>
 </pre></div>
 </div>
 </li>
@@ -170,32 +172,32 @@ display it in a <code class="docutils literal"><span class="pre">code-block</spa
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h2>
-<p>If a <code class="docutils literal"><span class="pre">remote-code-block</span></code> is empty in the HTML output, it is likely that
+<p>If a <code class="docutils literal"><span class="pre">remote-include</span></code> is empty in the HTML output, it is likely that
 the given link could not be resolved. Check the Sphinx build messages for a
 warning:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">rst</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span> <span class="n">WARNING</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">resolve</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">ini</span>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">rst</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span> <span class="n">WARNING</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">resolve</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rawsource</span><span class="o">.</span><span class="n">rst</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="module-remotecode">
-<span id="code-listing"></span><h2>Code listing<a class="headerlink" href="#module-remotecode" title="Permalink to this headline">#</a></h2>
-<p>A Sphinx extension that enables code blocks from remote sources.</p>
+<div class="section" id="module-remoteinclude">
+<span id="code-listing"></span><h2>Code listing<a class="headerlink" href="#module-remoteinclude" title="Permalink to this headline">#</a></h2>
+<p>A Sphinx extension that enables RST includes from remote sources.</p>
 <p>Copyright 2017 Brian Moss</p>
 <dl class="class">
-<dt id="remotecode.RemoteCodeBlock">
-<em class="property">class </em><code class="descclassname">remotecode.</code><code class="descname">RemoteCodeBlock</code><span class="sig-paren">(</span><em>name</em>, <em>arguments</em>, <em>options</em>, <em>content</em>, <em>lineno</em>, <em>content_offset</em>, <em>block_text</em>, <em>state</em>, <em>state_machine</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/remotecode.html#RemoteCodeBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remotecode.RemoteCodeBlock" title="Permalink to this definition">#</a></dt>
-<dd><p>Create remote-code-block directive.</p>
+<dt id="remoteinclude.RemoteInclude">
+<em class="property">class </em><code class="descclassname">remoteinclude.</code><code class="descname">RemoteInclude</code><span class="sig-paren">(</span><em>name</em>, <em>arguments</em>, <em>options</em>, <em>content</em>, <em>lineno</em>, <em>content_offset</em>, <em>block_text</em>, <em>state</em>, <em>state_machine</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/remoteinclude.html#RemoteInclude"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remoteinclude.RemoteInclude" title="Permalink to this definition">#</a></dt>
+<dd><p>Create remote-include directive.</p>
 <dl class="method">
-<dt id="remotecode.RemoteCodeBlock.run">
-<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/remotecode.html#RemoteCodeBlock.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remotecode.RemoteCodeBlock.run" title="Permalink to this definition">#</a></dt>
-<dd><p>Fetch remote code.</p>
+<dt id="remoteinclude.RemoteInclude.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/remoteinclude.html#RemoteInclude.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remoteinclude.RemoteInclude.run" title="Permalink to this definition">#</a></dt>
+<dd><p>Return rel path to a downloaded file as <cite>include</cite> node argument.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="function">
-<dt id="remotecode.setup">
-<code class="descclassname">remotecode.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/remotecode.html#setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remotecode.setup" title="Permalink to this definition">#</a></dt>
+<dt id="remoteinclude.setup">
+<code class="descclassname">remoteinclude.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/remoteinclude.html#setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remoteinclude.setup" title="Permalink to this definition">#</a></dt>
 <dd><p>Setup for Sphinx extension.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -217,10 +219,8 @@ warning:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="remoteinclude.html" class="btn btn-neutral float-right" title="remoteinclude" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="bolditalic.html" class="btn btn-neutral" title="bolditalic" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="remotecode.html" class="btn btn-neutral" title="remotecode" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

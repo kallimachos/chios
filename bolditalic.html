@@ -13,6 +13,8 @@
 
   
   
+    <link rel="shortcut icon" href="_static/chios.ico"/>
+  
 
   
 
@@ -59,6 +61,9 @@
           
 
           
+            
+            <img src="_static/chios.png" class="logo" />
+          
           </a>
 
           
@@ -94,6 +99,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="remotecode.html">remotecode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remoteinclude.html">remoteinclude</a></li>
 </ul>
 
             
@@ -139,11 +145,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="bolditalic">
-<h1>bolditalic<a class="headerlink" href="#bolditalic" title="Permalink to this headline">¶</a></h1>
+<h1>bolditalic<a class="headerlink" href="#bolditalic" title="Permalink to this headline">#</a></h1>
 <p><strong>bolditalic</strong> is an extension for Sphinx that enables inline bold + italic
 text styling.</p>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p class="first"><a class="reference internal" href="install.html#install"><span class="std std-ref">Install chios</span></a>, then add <strong>bolditalic</strong> to the list of
 extensions in <code class="docutils literal"><span class="pre">conf.py</span></code>:</p>
@@ -173,12 +179,12 @@ extensions in <code class="docutils literal"><span class="pre">conf.py</span></c
 </div>
 </div>
 <div class="section" id="module-bolditalic">
-<span id="code-listing"></span><h2>Code listing<a class="headerlink" href="#module-bolditalic" title="Permalink to this headline">¶</a></h2>
+<span id="code-listing"></span><h2>Code listing<a class="headerlink" href="#module-bolditalic" title="Permalink to this headline">#</a></h2>
 <p>A Sphinx extension that enables inline bold + italic.</p>
 <p>Copyright 2017 Brian Moss</p>
 <dl class="function">
 <dt id="bolditalic.bolditalic">
-<code class="descclassname">bolditalic.</code><code class="descname">bolditalic</code><span class="sig-paren">(</span><em>name</em>, <em>rawtext</em>, <em>text</em>, <em>lineno</em>, <em>inliner</em>, <em>options={}</em>, <em>content=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#bolditalic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.bolditalic" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">bolditalic.</code><code class="descname">bolditalic</code><span class="sig-paren">(</span><em>name</em>, <em>rawtext</em>, <em>text</em>, <em>lineno</em>, <em>inliner</em>, <em>options={}</em>, <em>content=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#bolditalic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.bolditalic" title="Permalink to this definition">#</a></dt>
 <dd><p>Add bolditalic role.</p>
 <p>Returns 2 part tuple containing list of nodes to insert into the
 document and a list of system messages.  Both are allowed to be
@@ -188,13 +194,13 @@ empty.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> &#8211; The role name used in the document.</li>
-<li><strong>rawtext</strong> &#8211; The entire markup snippet, with role.</li>
-<li><strong>text</strong> &#8211; The text marked with the role.</li>
-<li><strong>lineno</strong> &#8211; The line number where rawtext appears in the input.</li>
-<li><strong>inliner</strong> &#8211; The inliner instance that called this function.</li>
-<li><strong>options</strong> &#8211; Directive options for customization.</li>
-<li><strong>content</strong> &#8211; The directive content for customization.</li>
+<li><strong>name</strong> -- The role name used in the document.</li>
+<li><strong>rawtext</strong> -- The entire markup snippet, with role.</li>
+<li><strong>text</strong> -- The text marked with the role.</li>
+<li><strong>lineno</strong> -- The line number where rawtext appears in the input.</li>
+<li><strong>inliner</strong> -- The inliner instance that called this function.</li>
+<li><strong>options</strong> -- Directive options for customization.</li>
+<li><strong>content</strong> -- The directive content for customization.</li>
 </ul>
 </td>
 </tr>
@@ -204,15 +210,15 @@ empty.</p>
 
 <dl class="function">
 <dt id="bolditalic.css">
-<code class="descclassname">bolditalic.</code><code class="descname">css</code><span class="sig-paren">(</span><em>app</em>, <em>env</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#css"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.css" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">bolditalic.</code><code class="descname">css</code><span class="sig-paren">(</span><em>app</em>, <em>env</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#css"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.css" title="Permalink to this definition">#</a></dt>
 <dd><p>Add bolditalic CSS.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>app</strong> &#8211; Sphinx application context.</li>
-<li><strong>env</strong> &#8211; Sphinx environment context.</li>
+<li><strong>app</strong> -- Sphinx application context.</li>
+<li><strong>env</strong> -- Sphinx environment context.</li>
 </ul>
 </td>
 </tr>
@@ -222,13 +228,13 @@ empty.</p>
 
 <dl class="function">
 <dt id="bolditalic.setup">
-<code class="descclassname">bolditalic.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.setup" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">bolditalic.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.setup" title="Permalink to this definition">#</a></dt>
 <dd><p>Setup for Sphinx extension.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> &#8211; Sphinx application context.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> -- Sphinx application context.</td>
 </tr>
 </tbody>
 </table>

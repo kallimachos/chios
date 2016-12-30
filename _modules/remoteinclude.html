@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>remotecode &mdash; chios  documentation</title>
+  <title>remoteinclude &mdash; chios  documentation</title>
   
 
   
@@ -127,7 +127,7 @@
       
           <li><a href="index.html">Module code</a> &raquo;</li>
       
-    <li>remotecode</li>
+    <li>remoteinclude</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -139,46 +139,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for remotecode</h1><div class="highlight"><pre>
+  <h1>Source code for remoteinclude</h1><div class="highlight"><pre>
 <span></span><span class="ch">#!/bin/python3</span>
 <span class="c1"># coding: utf-8</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">A Sphinx extension that enables code blocks from remote sources.</span>
+<span class="sd">A Sphinx extension that enables RST includes from remote sources.</span>
 
 <span class="sd">Copyright 2017 Brian Moss</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
+<span class="kn">import</span> <span class="nn">os</span>
+
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">sphinx.directives</span> <span class="k">import</span> <span class="n">code</span>
+<span class="kn">from</span> <span class="nn">sphinx.directives</span> <span class="k">import</span> <span class="n">other</span>
 
 <span class="kn">from</span> <span class="nn">chios</span> <span class="k">import</span> <span class="n">__version__</span>
 
 
-<div class="viewcode-block" id="RemoteCodeBlock"><a class="viewcode-back" href="../remotecode.html#remotecode.RemoteCodeBlock">[docs]</a><span class="k">class</span> <span class="nc">RemoteCodeBlock</span><span class="p">(</span><span class="n">code</span><span class="o">.</span><span class="n">CodeBlock</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Create remote-code-block directive.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="RemoteInclude"><a class="viewcode-back" href="../remoteinclude.html#remoteinclude.RemoteInclude">[docs]</a><span class="k">class</span> <span class="nc">RemoteInclude</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">Include</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Create remote-include directive.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="RemoteCodeBlock.run"><a class="viewcode-back" href="../remotecode.html#remotecode.RemoteCodeBlock.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Fetch remote code.&quot;&quot;&quot;</span>
-        <span class="n">link</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="viewcode-block" id="RemoteInclude.run"><a class="viewcode-back" href="../remoteinclude.html#remoteinclude.RemoteInclude.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return rel path to a downloaded file as `include` node argument.&quot;&quot;&quot;</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">document</span>
+        <span class="n">env</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">env</span>
+        <span class="n">buildpath</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">outdir</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
         <span class="k">try</span><span class="p">:</span>
             <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
             <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">]</span>
-            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">RemoteCodeBlock</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+            <span class="n">downloadpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">buildpath</span><span class="p">,</span> <span class="s1">&#39;_downloads&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">downloadpath</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">downloadpath</span><span class="p">)</span>
+            <span class="n">rstfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">downloadpath</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">link</span><span class="p">))</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">rstfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+            <span class="n">rstfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">rstfile</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">doc2path</span>
+                                                               <span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">docname</span><span class="p">)))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span> <span class="o">=</span> <span class="p">[</span><span class="n">rstfile</span><span class="p">]</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">RemoteInclude</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
         <span class="k">except</span><span class="p">:</span>
-            <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">document</span>
             <span class="n">err</span> <span class="o">=</span> <span class="s1">&#39;Unable to resolve &#39;</span> <span class="o">+</span> <span class="n">link</span>
             <span class="k">return</span> <span class="p">[</span><span class="n">document</span><span class="o">.</span><span class="n">reporter</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">),</span> <span class="n">line</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lineno</span><span class="p">)]</span></div></div>
 
 
-<div class="viewcode-block" id="setup"><a class="viewcode-back" href="../remotecode.html#remotecode.setup">[docs]</a><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+<div class="viewcode-block" id="setup"><a class="viewcode-back" href="../remoteinclude.html#remoteinclude.setup">[docs]</a><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Setup for Sphinx extension.</span>
 
 <span class="sd">    :param app: Sphinx application context.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;adding remote-code-block directive...&#39;</span><span class="p">,</span> <span class="n">nonl</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s1">&#39;remote-code-block&#39;</span><span class="p">,</span> <span class="n">RemoteCodeBlock</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;adding remote-include directive...&#39;</span><span class="p">,</span> <span class="n">nonl</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s1">&#39;remote-include&#39;</span><span class="p">,</span> <span class="n">RemoteInclude</span><span class="p">)</span>
     <span class="n">app</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39; done&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">__version__</span><span class="p">}</span></div>
 
