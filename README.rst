@@ -59,3 +59,13 @@ directive:
    .. remote-code-block:: ini
 
       https://example.com/rawsource.ini
+
+remoteinclude
+-------------
+
+Enables RST file inclusion from remote sources using a ``remote-include``
+directive:
+
+.. code::
+
+   .. remote-include:: https://example.com/rawsource.rst

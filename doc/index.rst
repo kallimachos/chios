@@ -13,3 +13,4 @@ Chios, whose symbol was the Sphinx.
    install.rst
    bolditalic.rst
    remotecode.rst
+   remoteinclude.rst
