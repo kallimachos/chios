@@ -6,3 +6,4 @@ inline
 inliner
 rawtext
 remotecode
+toctree
