@@ -95,7 +95,10 @@
 <li class="toctree-l1"><a class="reference internal" href="bolditalic.html">bolditalic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="remotecode.html">remotecode</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">remoteinclude</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-a-remote-file-in-a-toctree">Using a remote file in a toctree</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-remoteinclude">Code listing</a></li>
 </ul>
@@ -167,8 +170,41 @@ include it:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">include</span><span class="p">::</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rawsource</span><span class="o">.</span><span class="n">rst</span>
 </pre></div>
 </div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The <code class="docutils literal"><span class="pre">remote-include</span></code> directive does not follow references to other
+remote files within a downloaded file. In other words, <code class="docutils literal"><span class="pre">toctree</span></code>,
+<code class="docutils literal"><span class="pre">:ref:</span></code>, and similar markup fails because the referenced files are not
+locally available.</p>
+</div>
 </li>
 </ol>
+<div class="section" id="using-a-remote-file-in-a-toctree">
+<h3>Using a remote file in a toctree<a class="headerlink" href="#using-a-remote-file-in-a-toctree" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal"><span class="pre">toctree</span></code> directive does not allow <code class="docutils literal"><span class="pre">include</span></code> as a child. To use a
+remote file in a <code class="docutils literal"><span class="pre">toctree</span></code>:</p>
+<ol class="arabic">
+<li><p class="first">Create an RST file in your source directory with an appropriate name:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span>$ touch doc/myfile.rst
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use the <code class="docutils literal"><span class="pre">remote-include</span></code> directive in that file:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">include</span><span class="p">::</span> <span class="n">www</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">myfile</span><span class="o">.</span><span class="n">rst</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">You can now reference the local file in a <code class="docutils literal"><span class="pre">toctree</span></code>:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+
+   <span class="n">intro</span><span class="o">.</span><span class="n">rst</span>
+   <span class="n">chapter</span><span class="o">.</span><span class="n">rst</span>
+   <span class="n">myfile</span><span class="o">.</span><span class="n">rst</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h2>
