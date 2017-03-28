@@ -15,6 +15,8 @@
   
     <link rel="shortcut icon" href="_static/chios.ico"/>
   
+  
+  
 
   
 
@@ -48,6 +50,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -70,7 +73,7 @@
             
             
               <div class="version">
-                0.1.3
+                0.1.4
               </div>
             
           
@@ -91,7 +94,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">bolditalic</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
@@ -112,8 +118,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">chios</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">chios</a>
+        
       </nav>
 
 
@@ -122,23 +130,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>bolditalic</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>bolditalic</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="_sources/bolditalic.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -181,7 +206,18 @@ extensions in <code class="docutils literal"><span class="pre">conf.py</span></c
 <div class="section" id="module-bolditalic">
 <span id="code-listing"></span><h2>Code listing<a class="headerlink" href="#module-bolditalic" title="Permalink to this headline">#</a></h2>
 <p>A Sphinx extension that enables inline bold + italic.</p>
-<p>Copyright 2017 Brian Moss</p>
+<p><a class="reference external" href="https://github.com/kallimachos/chios">https://github.com/kallimachos/chios</a></p>
+<p>Copyright (C) 2017 Brian Moss</p>
+<p>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.</p>
+<p>This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
 <dl class="function">
 <dt id="bolditalic.bolditalic">
 <code class="descclassname">bolditalic.</code><code class="descname">bolditalic</code><span class="sig-paren">(</span><em>name</em>, <em>rawtext</em>, <em>text</em>, <em>lineno</em>, <em>inliner</em>, <em>options={}</em>, <em>content=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#bolditalic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.bolditalic" title="Permalink to this definition">#</a></dt>
@@ -245,15 +281,18 @@ empty.</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="remotecode.html" class="btn btn-neutral float-right" title="remotecode" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="remotecode.html" class="btn btn-neutral float-right" title="remotecode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="install.html" class="btn btn-neutral" title="Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="install.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -287,7 +326,8 @@ empty.</p>
             VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
