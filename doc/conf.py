@@ -38,7 +38,6 @@ except:
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
-    'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
 ]
 
