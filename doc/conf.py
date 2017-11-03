@@ -24,7 +24,7 @@ sys.path.insert(0, os.path.abspath('../chios/'))
 
 try:
     from chios import __version__
-except:
+except ImportError:
     print('Cannot load version.')
 
 # -- General configuration ------------------------------------------------

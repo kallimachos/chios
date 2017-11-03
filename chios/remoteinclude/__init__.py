@@ -52,7 +52,7 @@ class RemoteInclude(other.Include):
                                                                (env.docname)))
             self.arguments = [rstfile]
             return super(RemoteInclude, self).run()
-        except:
+        except Exception:
             err = 'Unable to resolve ' + link
             return [document.reporter.warning(str(err), line=self.lineno)]
 

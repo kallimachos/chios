@@ -81,7 +81,7 @@ def setup(app):
         app.add_role('bolditalic', bolditalic)
         app.connect('env-updated', css)
         app.info(' done')
-    except:
+    except Exception:
         app.warn('Failed to initialize bolditalic styling.')
     return {
         'version': __version__,

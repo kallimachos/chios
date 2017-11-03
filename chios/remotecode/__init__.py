@@ -38,7 +38,7 @@ class RemoteCodeBlock(code.CodeBlock):
             r.raise_for_status()
             self.content = [r.text]
             return super(RemoteCodeBlock, self).run()
-        except:
+        except Exception:
             document = self.state.document
             err = 'Unable to resolve ' + link
             return [document.reporter.warning(str(err), line=self.lineno)]
