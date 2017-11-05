@@ -219,7 +219,7 @@
                                                                <span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">docname</span><span class="p">)))</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span> <span class="o">=</span> <span class="p">[</span><span class="n">rstfile</span><span class="p">]</span>
             <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">RemoteInclude</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-        <span class="k">except</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="n">err</span> <span class="o">=</span> <span class="s1">&#39;Unable to resolve &#39;</span> <span class="o">+</span> <span class="n">link</span>
             <span class="k">return</span> <span class="p">[</span><span class="n">document</span><span class="o">.</span><span class="n">reporter</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">),</span> <span class="n">line</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lineno</span><span class="p">)]</span></div></div>
 
