@@ -27,27 +27,19 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="chios  documentation" href="index.html"/>
-        <link rel="prev" title="remotecode" href="remotecode.html"/> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="remotecode" href="remotecode.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -64,7 +56,7 @@
 
           
             
-            <img src="_static/chios.png" class="logo" />
+            <img src="_static/chios.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -120,7 +112,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">chios</a>
@@ -128,9 +120,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -185,42 +178,42 @@ parsed after inclusion. Include files from trusted sources only.</p>
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p class="first"><a class="reference internal" href="install.html#install"><span class="std std-ref">Install chios</span></a>, then add <strong>remoteinclude</strong> to the list of
-extensions in <code class="docutils literal"><span class="pre">conf.py</span></code>:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.remoteinclude&#39;</span><span class="p">]</span>
+extensions in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.remoteinclude&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Use the <code class="docutils literal"><span class="pre">remote-include</span></code> directive to fetch a remote RST file and
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">remote-include</span></code> directive to fetch a remote RST file and
 include it:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">include</span><span class="p">::</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rawsource</span><span class="o">.</span><span class="n">rst</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">include</span><span class="p">::</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rawsource</span><span class="o">.</span><span class="n">rst</span>
 </pre></div>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">The <code class="docutils literal"><span class="pre">remote-include</span></code> directive does not follow references to other
-remote files within a downloaded file. In other words, <code class="docutils literal"><span class="pre">toctree</span></code>,
-<code class="docutils literal"><span class="pre">:ref:</span></code>, and similar markup fails because the referenced files are not
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">remote-include</span></code> directive does not follow references to other
+remote files within a downloaded file. In other words, <code class="docutils literal notranslate"><span class="pre">toctree</span></code>,
+<code class="docutils literal notranslate"><span class="pre">:ref:</span></code>, and similar markup fails because the referenced files are not
 locally available.</p>
 </div>
 </li>
 </ol>
 <div class="section" id="using-a-remote-file-in-a-toctree">
 <h3>Using a remote file in a toctree<a class="headerlink" href="#using-a-remote-file-in-a-toctree" title="Permalink to this headline">#</a></h3>
-<p>The <code class="docutils literal"><span class="pre">toctree</span></code> directive does not allow <code class="docutils literal"><span class="pre">include</span></code> as a child. To use a
-remote file in a <code class="docutils literal"><span class="pre">toctree</span></code>:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">toctree</span></code> directive does not allow <code class="docutils literal notranslate"><span class="pre">include</span></code> as a child. To use a
+remote file in a <code class="docutils literal notranslate"><span class="pre">toctree</span></code>:</p>
 <ol class="arabic">
 <li><p class="first">Create an RST file in your source directory with an appropriate name:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span>$ touch doc/myfile.rst
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>$ touch doc/myfile.rst
 </pre></div>
 </div>
 </li>
-<li><p class="first">Use the <code class="docutils literal"><span class="pre">remote-include</span></code> directive in that file:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">include</span><span class="p">::</span> <span class="n">www</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">myfile</span><span class="o">.</span><span class="n">rst</span>
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">remote-include</span></code> directive in that file:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">include</span><span class="p">::</span> <span class="n">www</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">myfile</span><span class="o">.</span><span class="n">rst</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">You can now reference the local file in a <code class="docutils literal"><span class="pre">toctree</span></code>:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+<li><p class="first">You can now reference the local file in a <code class="docutils literal notranslate"><span class="pre">toctree</span></code>:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
 
    <span class="n">intro</span><span class="o">.</span><span class="n">rst</span>
    <span class="n">chapter</span><span class="o">.</span><span class="n">rst</span>
@@ -233,10 +226,10 @@ remote file in a <code class="docutils literal"><span class="pre">toctree</span>
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h2>
-<p>If a <code class="docutils literal"><span class="pre">remote-include</span></code> is empty in the HTML output, it is likely that
+<p>If a <code class="docutils literal notranslate"><span class="pre">remote-include</span></code> is empty in the HTML output, it is likely that
 the given link could not be resolved. Check the Sphinx build messages for a
 warning:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">rst</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span> <span class="n">WARNING</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">resolve</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rawsource</span><span class="o">.</span><span class="n">rst</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">rst</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span> <span class="n">WARNING</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">resolve</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rawsource</span><span class="o">.</span><span class="n">rst</span>
 </pre></div>
 </div>
 </div>
@@ -275,7 +268,7 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> -- Sphinx application context.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> – Sphinx application context.</td>
 </tr>
 </tbody>
 </table>
@@ -286,9 +279,7 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -308,7 +299,7 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -327,6 +318,7 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -344,14 +336,13 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

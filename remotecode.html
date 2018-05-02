@@ -27,28 +27,20 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="chios  documentation" href="index.html"/>
-        <link rel="next" title="remoteinclude" href="remoteinclude.html"/>
-        <link rel="prev" title="bolditalic" href="bolditalic.html"/> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="remoteinclude" href="remoteinclude.html" />
+    <link rel="prev" title="bolditalic" href="bolditalic.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -65,7 +57,7 @@
 
           
             
-            <img src="_static/chios.png" class="logo" />
+            <img src="_static/chios.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -118,7 +110,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">chios</a>
@@ -126,9 +118,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -178,14 +171,14 @@ remote sources.</p>
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p class="first"><a class="reference internal" href="install.html#install"><span class="std std-ref">Install chios</span></a>, then add <strong>remotecode</strong> to the list of
-extensions in <code class="docutils literal"><span class="pre">conf.py</span></code>:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.remotecode&#39;</span><span class="p">]</span>
+extensions in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.remotecode&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Use the <code class="docutils literal"><span class="pre">remote-code-block</span></code> directive to fetch remote source code and
-display it in a <code class="docutils literal"><span class="pre">code-block</span></code>.</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">ini</span>
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">remote-code-block</span></code> directive to fetch remote source code and
+display it in a <code class="docutils literal notranslate"><span class="pre">code-block</span></code>.</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">ini</span>
 
    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rawsource</span><span class="o">.</span><span class="n">ini</span>
 </pre></div>
@@ -195,10 +188,10 @@ display it in a <code class="docutils literal"><span class="pre">code-block</spa
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h2>
-<p>If a <code class="docutils literal"><span class="pre">remote-code-block</span></code> is empty in the HTML output, it is likely that
+<p>If a <code class="docutils literal notranslate"><span class="pre">remote-code-block</span></code> is empty in the HTML output, it is likely that
 the given link could not be resolved. Check the Sphinx build messages for a
 warning:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">rst</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span> <span class="n">WARNING</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">resolve</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">ini</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">rst</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span> <span class="n">WARNING</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">resolve</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">ini</span>
 </pre></div>
 </div>
 </div>
@@ -237,7 +230,7 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> -- Sphinx application context.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> – Sphinx application context.</td>
 </tr>
 </tbody>
 </table>
@@ -248,9 +241,7 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -272,7 +263,7 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -291,6 +282,7 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -308,14 +300,13 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

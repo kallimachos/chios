@@ -27,28 +27,20 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="chios  documentation" href="index.html"/>
-        <link rel="next" title="remotecode" href="remotecode.html"/>
-        <link rel="prev" title="Installation" href="install.html"/> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="remotecode" href="remotecode.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -65,7 +57,7 @@
 
           
             
-            <img src="_static/chios.png" class="logo" />
+            <img src="_static/chios.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -117,7 +109,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">chios</a>
@@ -125,9 +117,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -177,23 +170,23 @@ text styling.</p>
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
 <li><p class="first"><a class="reference internal" href="install.html#install"><span class="std std-ref">Install chios</span></a>, then add <strong>bolditalic</strong> to the list of
-extensions in <code class="docutils literal"><span class="pre">conf.py</span></code>:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.bolditalic&#39;</span><span class="p">]</span>
+extensions in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.bolditalic&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Use the <code class="docutils literal"><span class="pre">bolditalic</span></code> role to style text:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span>The end of this sentence :bolditalic:`displays in bold and italic`.
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">bolditalic</span></code> role to style text:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>The end of this sentence :bolditalic:`displays in bold and italic`.
 </pre></div>
 </div>
 </li>
 </ol>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p>If you define <code class="docutils literal"><span class="pre">html_context</span></code> in your <code class="docutils literal"><span class="pre">conf.py</span></code>, you must add the
-<code class="docutils literal"><span class="pre">bolditalic.css</span></code> style sheet to it.</p>
+<p>If you define <code class="docutils literal notranslate"><span class="pre">html_context</span></code> in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, you must add the
+<code class="docutils literal notranslate"><span class="pre">bolditalic.css</span></code> style sheet to it.</p>
 <p><strong>Example</strong></p>
-<div class="code last highlight-default"><div class="highlight"><pre><span></span><span class="n">html_context</span> <span class="o">=</span> <span class="p">{</span>
+<div class="code last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">html_context</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">&#39;css_files&#39;</span><span class="p">:</span> <span class="p">[</span>
     <span class="s1">&#39;_static/bespoke.css&#39;</span><span class="p">,</span>  <span class="c1"># custom CSS styling</span>
     <span class="s1">&#39;_static/bolditalic.css&#39;</span><span class="p">,</span>  <span class="c1"># bolditalic styling</span>
@@ -230,13 +223,13 @@ empty.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> -- The role name used in the document.</li>
-<li><strong>rawtext</strong> -- The entire markup snippet, with role.</li>
-<li><strong>text</strong> -- The text marked with the role.</li>
-<li><strong>lineno</strong> -- The line number where rawtext appears in the input.</li>
-<li><strong>inliner</strong> -- The inliner instance that called this function.</li>
-<li><strong>options</strong> -- Directive options for customization.</li>
-<li><strong>content</strong> -- The directive content for customization.</li>
+<li><strong>name</strong> – The role name used in the document.</li>
+<li><strong>rawtext</strong> – The entire markup snippet, with role.</li>
+<li><strong>text</strong> – The text marked with the role.</li>
+<li><strong>lineno</strong> – The line number where rawtext appears in the input.</li>
+<li><strong>inliner</strong> – The inliner instance that called this function.</li>
+<li><strong>options</strong> – Directive options for customization.</li>
+<li><strong>content</strong> – The directive content for customization.</li>
 </ul>
 </td>
 </tr>
@@ -253,8 +246,8 @@ empty.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>app</strong> -- Sphinx application context.</li>
-<li><strong>env</strong> -- Sphinx environment context.</li>
+<li><strong>app</strong> – Sphinx application context.</li>
+<li><strong>env</strong> – Sphinx environment context.</li>
 </ul>
 </td>
 </tr>
@@ -270,7 +263,7 @@ empty.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> -- Sphinx application context.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> – Sphinx application context.</td>
 </tr>
 </tbody>
 </table>
@@ -281,9 +274,7 @@ empty.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -305,7 +296,7 @@ empty.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -324,6 +315,7 @@ empty.</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -341,14 +333,13 @@ empty.</p>
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
