@@ -31,10 +31,8 @@ setup(
         'Topic :: Documentation :: Sphinx',
         'Framework :: Sphinx :: Extension',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
 
     keywords='sphinx documentation extension bold italic remote code',
