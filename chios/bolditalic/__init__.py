@@ -5,7 +5,7 @@ A Sphinx extension that enables inline bold + italic.
 
 https://github.com/kallimachos/chios
 
-Copyright (C) 2017 Brian Moss
+Copyright (C) 2019 Brian Moss
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -22,10 +22,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 import os
-from docutils import nodes
 from shutil import copy
 
+from docutils import nodes
+from sphinx.util import logging
+
 from chios import __version__
+
+logger = logging.getLogger(__name__)
 
 
 def css(app, env):
@@ -36,16 +40,16 @@ def css(app, env):
     :param env: Sphinx environment context.
     """
     srcdir = os.path.abspath(os.path.dirname(__file__))
-    cssfile = 'bolditalic.css'
+    cssfile = "bolditalic.css"
     csspath = os.path.join(srcdir, cssfile)
-    buildpath = os.path.join(app.outdir, '_static')
+    buildpath = os.path.join(app.outdir, "_static")
     try:
         os.makedirs(buildpath)
     except OSError:
         if not os.path.isdir(buildpath):
             raise
     copy(csspath, buildpath)
-    app.add_stylesheet(cssfile)
+    app.add_css_file(cssfile)
     return
 
 
@@ -66,29 +70,29 @@ def bolditalic(name, rawtext, text, lineno, inliner, options={}, content=[]):
     :param content: The directive content for customization.
     """
     node = nodes.inline(rawtext, text)
-    node.set_class('bolditalic')
+    node["classes"].append("bolditalic")
     return [node], []
 
 
 def setup(app):
     """
-    Setup for Sphinx extension.
+    Set up Sphinx extension.
 
     :param app: Sphinx application context.
     """
     try:
-        app.info('adding bolditalic role...', nonl=True)
-        app.add_role('bolditalic', bolditalic)
-        app.connect('env-updated', css)
-        app.info(' done')
+        logger.info("adding bolditalic role...", nonl=True)
+        app.add_role("bolditalic", bolditalic)
+        app.connect("env-updated", css)
+        logger.info(" done")
     except Exception:
-        app.warn('Failed to initialize bolditalic styling.')
+        logger.warning("Failed to initialize bolditalic styling.")
     return {
-        'version': __version__,
-        'parallel_read_safe': True,
-        'parallel_write_safe': True,
-        }
+        "version": __version__,
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

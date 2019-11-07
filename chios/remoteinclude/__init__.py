@@ -5,7 +5,7 @@ A Sphinx extension that enables RST includes from remote sources.
 
 https://github.com/kallimachos/chios
 
-Copyright (C) 2017 Brian Moss
+Copyright (C) 2019 Brian Moss
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -25,8 +25,11 @@ import os
 
 import requests
 from sphinx.directives import other
+from sphinx.util import logging
 
 from chios import __version__
+
+logger = logging.getLogger(__name__)
 
 
 class RemoteInclude(other.Include):
@@ -42,36 +45,35 @@ class RemoteInclude(other.Include):
         try:
             r = requests.get(link)
             r.raise_for_status()
-            downloadpath = os.path.join(buildpath, '_downloads')
+            downloadpath = os.path.join(buildpath, "_downloads")
             if not os.path.isdir(downloadpath):
                 os.makedirs(downloadpath)
             rstfile = os.path.join(downloadpath, os.path.basename(link))
-            with open(rstfile, 'w') as f:
+            with open(rstfile, "w") as f:
                 f.write(r.text)
-            rstfile = os.path.relpath(rstfile, os.path.dirname(env.doc2path
-                                                               (env.docname)))
+            rstfile = os.path.relpath(rstfile, os.path.dirname(env.doc2path(env.docname)))
             self.arguments = [rstfile]
             return super(RemoteInclude, self).run()
         except Exception:
-            err = 'Unable to resolve ' + link
+            err = "Unable to resolve " + link
             return [document.reporter.warning(str(err), line=self.lineno)]
 
 
 def setup(app):
     """
-    Setup for Sphinx extension.
+    Set up Sphinx extension.
 
     :param app: Sphinx application context.
     """
-    app.info('adding remote-include directive...', nonl=True)
-    app.add_directive('remote-include', RemoteInclude)
-    app.info(' done')
+    logger.info("adding remote-include directive...", nonl=True)
+    app.add_directive("remote-include", RemoteInclude)
+    logger.info(" done")
     return {
-        'version': __version__,
-        'parallel_read_safe': True,
-        'parallel_write_safe': True,
-        }
+        "version": __version__,
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

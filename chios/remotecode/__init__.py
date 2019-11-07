@@ -5,7 +5,7 @@ A Sphinx extension that enables code blocks from remote sources.
 
 https://github.com/kallimachos/chios
 
-Copyright (C) 2017 Brian Moss
+Copyright (C) 2019 Brian Moss
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -23,8 +23,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import requests
 from sphinx.directives import code
+from sphinx.util import logging
 
 from chios import __version__
+
+logger = logging.getLogger(__name__)
 
 
 class RemoteCodeBlock(code.CodeBlock):
@@ -40,25 +43,25 @@ class RemoteCodeBlock(code.CodeBlock):
             return super(RemoteCodeBlock, self).run()
         except Exception:
             document = self.state.document
-            err = 'Unable to resolve ' + link
+            err = "Unable to resolve " + link
             return [document.reporter.warning(str(err), line=self.lineno)]
 
 
 def setup(app):
     """
-    Setup for Sphinx extension.
+    Set up Sphinx extension.
 
     :param app: Sphinx application context.
     """
-    app.info('adding remote-code-block directive...', nonl=True)
-    app.add_directive('remote-code-block', RemoteCodeBlock)
-    app.info(' done')
+    logger.info("adding remote-code-block directive...", nonl=True)
+    app.add_directive("remote-code-block", RemoteCodeBlock)
+    logger.info(" done")
     return {
-        'version': __version__,
-        'parallel_read_safe': True,
-        'parallel_write_safe': True,
-        }
+        "version": __version__,
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

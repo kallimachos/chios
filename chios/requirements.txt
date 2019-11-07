@@ -1,9 +1,5 @@
-doc8
 pyenchant
-pytest
-pytest-cov
 requests
 sphinx
 sphinxcontrib-spelling
 sphinx_rtd_theme
-sphinx-testing
