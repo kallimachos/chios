@@ -19,36 +19,37 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="remoteinclude" href="remoteinclude.html" />
     <link rel="prev" title="bolditalic" href="bolditalic.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -65,7 +66,7 @@
             
             
               <div class="version">
-                0.1.4
+                0.1.5
               </div>
             
           
@@ -170,15 +171,15 @@ remote sources.</p>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
-<li><p class="first"><a class="reference internal" href="install.html#install"><span class="std std-ref">Install chios</span></a>, then add <strong>remotecode</strong> to the list of
+<li><p><a class="reference internal" href="install.html#install"><span class="std std-ref">Install chios</span></a>, then add <strong>remotecode</strong> to the list of
 extensions in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.remotecode&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.remotecode&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">remote-code-block</span></code> directive to fetch remote source code and
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">remote-code-block</span></code> directive to fetch remote source code and
 display it in a <code class="docutils literal notranslate"><span class="pre">code-block</span></code>.</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">ini</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">remote</span><span class="o">-</span><span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">ini</span>
 
    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rawsource</span><span class="o">.</span><span class="n">ini</span>
 </pre></div>
@@ -191,7 +192,7 @@ display it in a <code class="docutils literal notranslate"><span class="pre">cod
 <p>If a <code class="docutils literal notranslate"><span class="pre">remote-code-block</span></code> is empty in the HTML output, it is likely that
 the given link could not be resolved. Check the Sphinx build messages for a
 warning:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">rst</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span> <span class="n">WARNING</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">resolve</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">ini</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">rst</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span> <span class="n">WARNING</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">resolve</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">ini</span>
 </pre></div>
 </div>
 </div>
@@ -199,7 +200,7 @@ warning:</p>
 <span id="code-listing"></span><h2>Code listing<a class="headerlink" href="#module-remotecode" title="Permalink to this headline">#</a></h2>
 <p>A Sphinx extension that enables code blocks from remote sources.</p>
 <p><a class="reference external" href="https://github.com/kallimachos/chios">https://github.com/kallimachos/chios</a></p>
-<p>Copyright (C) 2017 Brian Moss</p>
+<p>Copyright (C) 2019 Brian Moss</p>
 <p>This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -212,11 +213,11 @@ GNU General Public License for more details.</p>
 along with this program.  If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
 <dl class="class">
 <dt id="remotecode.RemoteCodeBlock">
-<em class="property">class </em><code class="descclassname">remotecode.</code><code class="descname">RemoteCodeBlock</code><span class="sig-paren">(</span><em>name</em>, <em>arguments</em>, <em>options</em>, <em>content</em>, <em>lineno</em>, <em>content_offset</em>, <em>block_text</em>, <em>state</em>, <em>state_machine</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/remotecode.html#RemoteCodeBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remotecode.RemoteCodeBlock" title="Permalink to this definition">#</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">remotecode.</code><code class="sig-name descname">RemoteCodeBlock</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">arguments</em>, <em class="sig-param">options</em>, <em class="sig-param">content</em>, <em class="sig-param">lineno</em>, <em class="sig-param">content_offset</em>, <em class="sig-param">block_text</em>, <em class="sig-param">state</em>, <em class="sig-param">state_machine</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/remotecode.html#RemoteCodeBlock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remotecode.RemoteCodeBlock" title="Permalink to this definition">#</a></dt>
 <dd><p>Create remote-code-block directive.</p>
 <dl class="method">
 <dt id="remotecode.RemoteCodeBlock.run">
-<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/remotecode.html#RemoteCodeBlock.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remotecode.RemoteCodeBlock.run" title="Permalink to this definition">#</a></dt>
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/remotecode.html#RemoteCodeBlock.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remotecode.RemoteCodeBlock.run" title="Permalink to this definition">#</a></dt>
 <dd><p>Fetch remote code.</p>
 </dd></dl>
 
@@ -224,16 +225,13 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
 
 <dl class="function">
 <dt id="remotecode.setup">
-<code class="descclassname">remotecode.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/remotecode.html#setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remotecode.setup" title="Permalink to this definition">#</a></dt>
-<dd><p>Setup for Sphinx extension.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> – Sphinx application context.</td>
-</tr>
-</tbody>
-</table>
+<code class="sig-prename descclassname">remotecode.</code><code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param">app</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/remotecode.html#setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#remotecode.setup" title="Permalink to this definition">#</a></dt>
+<dd><p>Set up Sphinx extension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>app</strong> – Sphinx application context.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -250,7 +248,7 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
         <a href="remoteinclude.html" class="btn btn-neutral float-right" title="remoteinclude" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="bolditalic.html" class="btn btn-neutral" title="bolditalic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bolditalic.html" class="btn btn-neutral float-left" title="bolditalic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -259,7 +257,7 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Brian Moss.
+        &copy; Copyright 2017, Brian Moss
 
     </p>
   </div>
@@ -276,37 +274,16 @@ along with this program.  If not, see &lt;<a class="reference external" href="ht
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
   <script type="text/javascript">
       jQuery(function () {
-          
-          SphinxRtdTheme.Navigation.enableSticky();
-          
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

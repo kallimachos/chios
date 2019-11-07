@@ -19,36 +19,37 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="remotecode" href="remotecode.html" />
     <link rel="prev" title="Installation" href="install.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -65,7 +66,7 @@
             
             
               <div class="version">
-                0.1.4
+                0.1.5
               </div>
             
           
@@ -169,24 +170,24 @@ text styling.</p>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <ol class="arabic">
-<li><p class="first"><a class="reference internal" href="install.html#install"><span class="std std-ref">Install chios</span></a>, then add <strong>bolditalic</strong> to the list of
+<li><p><a class="reference internal" href="install.html#install"><span class="std std-ref">Install chios</span></a>, then add <strong>bolditalic</strong> to the list of
 extensions in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.bolditalic&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chios.bolditalic&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">bolditalic</span></code> role to style text:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>The end of this sentence :bolditalic:`displays in bold and italic`.
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">bolditalic</span></code> role to style text:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The end of this sentence :bolditalic:`displays in bold and italic`.
 </pre></div>
 </div>
 </li>
 </ol>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>If you define <code class="docutils literal notranslate"><span class="pre">html_context</span></code> in your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, you must add the
 <code class="docutils literal notranslate"><span class="pre">bolditalic.css</span></code> style sheet to it.</p>
 <p><strong>Example</strong></p>
-<div class="code last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">html_context</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">html_context</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">&#39;css_files&#39;</span><span class="p">:</span> <span class="p">[</span>
     <span class="s1">&#39;_static/bespoke.css&#39;</span><span class="p">,</span>  <span class="c1"># custom CSS styling</span>
     <span class="s1">&#39;_static/bolditalic.css&#39;</span><span class="p">,</span>  <span class="c1"># bolditalic styling</span>
@@ -200,7 +201,7 @@ extensions in <code class="docutils literal notranslate"><span class="pre">conf.
 <span id="code-listing"></span><h2>Code listing<a class="headerlink" href="#module-bolditalic" title="Permalink to this headline">#</a></h2>
 <p>A Sphinx extension that enables inline bold + italic.</p>
 <p><a class="reference external" href="https://github.com/kallimachos/chios">https://github.com/kallimachos/chios</a></p>
-<p>Copyright (C) 2017 Brian Moss</p>
+<p>Copyright (C) 2019 Brian Moss</p>
 <p>This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -213,60 +214,49 @@ GNU General Public License for more details.</p>
 along with this program.  If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
 <dl class="function">
 <dt id="bolditalic.bolditalic">
-<code class="descclassname">bolditalic.</code><code class="descname">bolditalic</code><span class="sig-paren">(</span><em>name</em>, <em>rawtext</em>, <em>text</em>, <em>lineno</em>, <em>inliner</em>, <em>options={}</em>, <em>content=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#bolditalic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.bolditalic" title="Permalink to this definition">#</a></dt>
+<code class="sig-prename descclassname">bolditalic.</code><code class="sig-name descname">bolditalic</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">rawtext</em>, <em class="sig-param">text</em>, <em class="sig-param">lineno</em>, <em class="sig-param">inliner</em>, <em class="sig-param">options={}</em>, <em class="sig-param">content=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#bolditalic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.bolditalic" title="Permalink to this definition">#</a></dt>
 <dd><p>Add bolditalic role.</p>
 <p>Returns 2 part tuple containing list of nodes to insert into the
 document and a list of system messages.  Both are allowed to be
 empty.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> – The role name used in the document.</li>
-<li><strong>rawtext</strong> – The entire markup snippet, with role.</li>
-<li><strong>text</strong> – The text marked with the role.</li>
-<li><strong>lineno</strong> – The line number where rawtext appears in the input.</li>
-<li><strong>inliner</strong> – The inliner instance that called this function.</li>
-<li><strong>options</strong> – Directive options for customization.</li>
-<li><strong>content</strong> – The directive content for customization.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The role name used in the document.</p></li>
+<li><p><strong>rawtext</strong> – The entire markup snippet, with role.</p></li>
+<li><p><strong>text</strong> – The text marked with the role.</p></li>
+<li><p><strong>lineno</strong> – The line number where rawtext appears in the input.</p></li>
+<li><p><strong>inliner</strong> – The inliner instance that called this function.</p></li>
+<li><p><strong>options</strong> – Directive options for customization.</p></li>
+<li><p><strong>content</strong> – The directive content for customization.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="bolditalic.css">
-<code class="descclassname">bolditalic.</code><code class="descname">css</code><span class="sig-paren">(</span><em>app</em>, <em>env</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#css"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.css" title="Permalink to this definition">#</a></dt>
+<code class="sig-prename descclassname">bolditalic.</code><code class="sig-name descname">css</code><span class="sig-paren">(</span><em class="sig-param">app</em>, <em class="sig-param">env</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#css"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.css" title="Permalink to this definition">#</a></dt>
 <dd><p>Add bolditalic CSS.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>app</strong> – Sphinx application context.</li>
-<li><strong>env</strong> – Sphinx environment context.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>app</strong> – Sphinx application context.</p></li>
+<li><p><strong>env</strong> – Sphinx environment context.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="bolditalic.setup">
-<code class="descclassname">bolditalic.</code><code class="descname">setup</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.setup" title="Permalink to this definition">#</a></dt>
-<dd><p>Setup for Sphinx extension.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> – Sphinx application context.</td>
-</tr>
-</tbody>
-</table>
+<code class="sig-prename descclassname">bolditalic.</code><code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param">app</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bolditalic.html#setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bolditalic.setup" title="Permalink to this definition">#</a></dt>
+<dd><p>Set up Sphinx extension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>app</strong> – Sphinx application context.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -283,7 +273,7 @@ empty.</p>
         <a href="remotecode.html" class="btn btn-neutral float-right" title="remotecode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="install.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -292,7 +282,7 @@ empty.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Brian Moss.
+        &copy; Copyright 2017, Brian Moss
 
     </p>
   </div>
@@ -309,37 +299,16 @@ empty.</p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
   <script type="text/javascript">
       jQuery(function () {
-          
-          SphinxRtdTheme.Navigation.enableSticky();
-          
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
