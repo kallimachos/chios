@@ -5,7 +5,7 @@
 from sphinx_testing import TestApp as MakeApp  # rename to prevent warning
 
 htmlfile = "index.html"
-div = '<div class="section" id="remoteinclude">'
+div = '<section id="some-example-rst-remotely-included">'
 text = "This is some source RST"
 
 

@@ -5,7 +5,7 @@ A Sphinx extension that enables RST includes from remote sources.
 
 https://github.com/kallimachos/chios
 
-Copyright (C) 2019 Brian Moss
+Copyright (C) 2021 Brian Moss
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -59,7 +59,7 @@ class RemoteInclude(other.Include):
             return [document.reporter.warning(str(err), line=self.lineno)]
 
 
-def setup(app):
+def setup(app) -> dict:
     """
     Set up Sphinx extension.
 
