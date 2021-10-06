@@ -49,6 +49,7 @@ else:
 html_logo = "_static/chios.png"
 html_favicon = "_static/chios.ico"
 html_static_path = ["_static"]
+html_css_files = ["theme_overrides.css"]
 html_use_smartypants = False
 htmlhelp_basename = "doc"
 html_permalinks = True
