@@ -49,11 +49,6 @@ else:
 html_logo = "_static/chios.png"
 html_favicon = "_static/chios.ico"
 html_static_path = ["_static"]
-html_context = {
-    "css_files": [
-        "_static/theme_overrides.css",  # overrides wide tables in RTD theme
-    ],
-}
 html_use_smartypants = False
 htmlhelp_basename = "doc"
 html_permalinks = True
