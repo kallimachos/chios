@@ -4,6 +4,7 @@
 
 import os
 import sys
+from datetime import datetime
 
 try:
     import sphinx_rtd_theme
@@ -36,7 +37,7 @@ if spelling is not None:
 source_suffix = ".rst"
 master_doc = "index"
 project = "chios"
-copyright = "2021, Brian Moss"
+copyright = f"{datetime.now().year}, Brian Moss"
 author = "Brian Moss"
 version = __version__
 language = None
@@ -49,6 +50,7 @@ else:
 html_logo = "_static/chios.png"
 html_favicon = "_static/chios.ico"
 html_static_path = ["_static"]
+html_css_files = ["theme_overrides.css"]
 html_use_smartypants = False
 htmlhelp_basename = "doc"
 html_permalinks = True
