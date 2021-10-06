@@ -2,9 +2,6 @@
 chios
 =====
 
-.. image:: https://travis-ci.org/kallimachos/chios.svg?branch=master
-   :target: https://travis-ci.org/kallimachos/chios
-
 .. image:: https://img.shields.io/pypi/status/chios.svg?style=flat
    :target: https://pypi.python.org/pypi/chios
 
@@ -12,6 +9,12 @@ chios
    :target: https://pypi.python.org/pypi/chios
 
 .. image:: https://img.shields.io/badge/Python-3.7-brightgreen.svg?style=flat
+   :target: http://python.org
+
+.. image:: https://img.shields.io/badge/Python-3.8-brightgreen.svg?style=flat
+   :target: http://python.org
+
+.. image:: https://img.shields.io/badge/Python-3.9-brightgreen.svg?style=flat
    :target: http://python.org
 
 .. image:: http://img.shields.io/badge/license-GPL-blue.svg?style=flat

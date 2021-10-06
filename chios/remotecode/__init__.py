@@ -5,7 +5,7 @@ A Sphinx extension that enables code blocks from remote sources.
 
 https://github.com/kallimachos/chios
 
-Copyright (C) 2019 Brian Moss
+Copyright (C) 2021 Brian Moss
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ class RemoteCodeBlock(code.CodeBlock):
             return [document.reporter.warning(str(err), line=self.lineno)]
 
 
-def setup(app):
+def setup(app) -> dict:
     """
     Set up Sphinx extension.
 

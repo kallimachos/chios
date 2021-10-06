@@ -5,7 +5,7 @@ A Sphinx extension that enables inline bold + italic.
 
 https://github.com/kallimachos/chios
 
-Copyright (C) 2019 Brian Moss
+Copyright (C) 2021 Brian Moss
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ def css(app, env):
     return
 
 
-def bolditalic(name, rawtext, text, lineno, inliner, options={}, content=[]):
+def bolditalic(name, rawtext, text, lineno, inliner, options=None, content=None):
     """
     Add bolditalic role.
 
@@ -69,12 +69,16 @@ def bolditalic(name, rawtext, text, lineno, inliner, options={}, content=[]):
     :param options: Directive options for customization.
     :param content: The directive content for customization.
     """
+    if options is None:
+        options = {}
+    if content is None:
+        content = []
     node = nodes.inline(rawtext, text)
     node["classes"].append("bolditalic")
     return [node], []
 
 
-def setup(app):
+def setup(app) -> dict:
     """
     Set up Sphinx extension.
 
